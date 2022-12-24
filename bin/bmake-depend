@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eu
+
+docker compose run --rm kernel bash -c "cd src/kern/compile/$1; bmake depend"

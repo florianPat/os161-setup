@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -eu
+
+NUMBER_OF_CORES=`nproc`
+
+docker compose run --rm kernel bash -c "cd src; bmake -j${NUMBER_OF_CORES}; bmake install"

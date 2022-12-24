@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  kernel:
+    build:
+      dockerfile: resources/docker/Dockerfile
+      args:
+        - U_ID=$USER_ID
+        - GROUP_ID=$GROUP_ID
+    volumes:
+      - .:/home/app/os161
+    env_file:
+      - .env
